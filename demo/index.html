@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FARMA PRO — Demo en línea</title>
+  <meta name="description" content="Pruebe gratis FARMA PRO, el sistema para farmacias y boticas del Perú: ventas, productos, lotes y vencimientos, caja.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%232563EB'/><text x='32' y='45' font-size='40' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>+</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ingreso -->
+  <section id="login" class="login hidden">
+    <div class="login-card">
+      <div class="brand"><div class="logo">+</div><h1>FARMA PRO</h1></div>
+      <p class="tag">Sistema para farmacias y boticas · <b>demostración en línea</b></p>
+      <div class="demo-creds">
+        🔑 Datos para entrar a la demostración:<br>
+        Usuario: <b>demo</b> &nbsp;·&nbsp; Contraseña: <b>Prueba2026</b>
+        <div style="margin-top:8px"><button type="button" class="btn orange" id="fill">Llenar los datos por mí</button></div>
+      </div>
+      <form id="login-form" autocomplete="off">
+        <label for="u">Usuario</label><input id="u" autocomplete="off">
+        <label for="p">Contraseña</label><input id="p" type="password" autocomplete="off">
+        <div id="login-error" class="error hidden"></div>
+        <button class="btn primary block big" type="submit">Ingresar a la demo</button>
+      </form>
+      <p class="small muted" style="margin-top:14px">La demostración funciona en su navegador con productos de ejemplo
+        (ficticios). Nada de lo que haga se envía a internet. ¿Quiere el sistema completo?
+        <a href="https://wa.me/51929509865?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20FARMA%20PRO" target="_blank" rel="noopener">Escríbame por WhatsApp</a>
+        o <a href="https://jcramigofiel20-collab.github.io/farma-pro-descargas/">descárguelo aquí</a>.</p>
+    </div>
+  </section>
+
+  <!-- Sistema -->
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo">+</div><div><h1>FARMA PRO</h1><small>Demostración en línea</small></div></div>
+      <nav id="nav" class="nav"></nav>
+      <div class="foot">Soporte: Joab Chavez Romero<br>WhatsApp +51 929 509 865</div>
+    </aside>
+    <div class="main">
+      <div class="demo-bar">
+        <b>🧪 MODO DEMOSTRACIÓN</b><span>Datos de ejemplo, solo en su navegador.</span><span class="sp"></span>
+        <button class="btn" id="reset">↺ Reiniciar demo</button>
+        <button class="btn want" id="want">⭐ Quiero FARMA PRO</button>
+      </div>
+      <header class="header">
+        <button class="btn menu-btn" id="menu" aria-label="Menú">☰</button>
+        <div><div class="store">Botica Demostración</div><div class="meta">Sucursal principal · Caja 1</div></div>
+        <span class="sp"></span>
+        <span class="chip date" id="today"></span>
+        <span class="chip">👤 demo (Administrador)</span>
+        <button class="btn" id="logout">Salir</button>
+      </header>
+      <main id="view" class="content"></main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
